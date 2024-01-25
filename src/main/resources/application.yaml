@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: status-manager
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_POSTGRESQL_HOST:localhost}:${DB_POSTGRESQL_PORT:5432}/${DB_POSTGRESQL_NAME:statusmanager}
+    username: ${DB_POSTGRESQL_USER:statusmanager}
+    password: ${DB_POSTGRESQL_PASS:statusmanager}
+  jpa:
+    open-in-view: false
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
